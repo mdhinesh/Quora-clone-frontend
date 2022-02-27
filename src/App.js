@@ -1,13 +1,20 @@
-import './App.css';
-import Navbar from './components/Navbar/Navbar'
-import Content from './components/content/Content'
+import { Routes, Route } from 'react-router-dom';
+import Home from "./components/Home";
+import Authcomponents from "./components/authcomponents";
+import Signup from "./components/auth/signup";
+import Login from "./components/auth/login"
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <Content />
-    </>
+    <div className="App">
+      {/* <Authcomponents /> */}
+      <Routes>
+        {/* <Route path='/' element={<Authcomponents />} /> */}
+        <Route path='/' element={<Signup />} />
+        <Route path='/userloggedin' element={<Home />} />
+        <Route path='/login' element={<Login />} />
+      </Routes>
+    </div>
   );
 }
 
